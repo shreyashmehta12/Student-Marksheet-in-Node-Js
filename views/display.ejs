@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<% var gen='Male'%>
+<% if(Gender==gen)
+{var a='S/O';
+}else
+{var a='D/O';
+}%>
+
+
+<% var c=0 %>
+
+<% var rem1=' '%>
+<% if(EnglishMarks>=0 && EnglishMarks<=33)
+{ rem1="F"
+ c=c+1;
+}
+else if(EnglishMarks>=75 && EnglishMarks<=100)
+{rem1="D"
+}
+else
+{rem1=' '
+}%>
+
+<% var rem2=' '%>
+<% if(HindiMarks>=0 && HindiMarks<=33)
+{rem2="F"
+c=c+1;
+}
+else if(HindiMarks>=75 && HindiMarks<=100)
+{rem2="D"
+}
+else
+{rem2=' '
+}%>
+
+<% var rem3=' '%>
+<% if(MathsMarks>=0 && MathsMarks<=33)
+{rem3="F";
+c=c+1;
+}
+else if(MathsMarks>=75 && MathsMarks<=100)
+{rem3="D"
+}
+else
+{rem3=' '
+}%>
+
+<% var rem4=' '%>
+<% if(PhysicsMarks>=0 && PhysicsMarks<=33)
+{rem4="F"
+c=c+1;
+}
+else if(PhysicsMarks>=75 && PhysicsMarks<=100)
+{rem4="D"
+}
+else
+{rem4=' '
+}%>
+
+<% var rem5=' '%>
+<% if(ChemistryMarks>=0 && ChemistryMarks<=33)
+{rem5="F"
+ c=c+1
+}
+else if(ChemistryMarks>=75 && ChemistryMarks<=100)
+{ rem5='D'
+}
+else
+{rem5=' '
+}%>
+
+<% if(c>=3)
+{s="Fail";
+} else
+{s="Pass";
+} %>
+
+
+<% if(RollNo!=''){%>
+
+    <table border='1' width='60%'>
+        <tr><td><img src='/images/logo.png' height='200' width='200'><font size='7'><b><i>Central Board of Secondary Education</i></b></font></td></tr>
+    </table>
+
+    <table border='1' width='60%' >
+        <caption><b>Student Information</b></caption>
+        <tr><td>Name: <%=StudentName %> <%= a%> <%=FatherName%></td></tr>
+        <tr><td>RollNo: <%=RollNo %></td></tr>
+        <tr><td>School: <%=SchoolName %></td></tr>
+        <tr><td>DOB: <%=Birthday %><br></td></tr></table>
+
+        <table border='1' width='60%'><caption><b>Student Marks</b></caption>
+            <tr><th>S_Code</th><th>S_Name</th><th>Min_Marks</th><th>Max_Marks</th><th>MarksObtained</th><th>Remarks</th></tr>
+            <tr><td>101</td><td>English</td><td>33</td><td>100</td><td><%=EnglishMarks %></td><td><%=rem1%></td></tr>
+            <tr><td>102</td><td>Hindi</td><td>33</td><td>100</td><td><%=HindiMarks %></td><td><%=rem2%></td></tr>
+            <tr><td>103</td><td>Maths</td><td>33</td><td>100</td><td><%=MathsMarks %></td><td><%=rem3%></td></tr>
+            <tr><td>104</td><td>Physics</td><td>33</td><td>100</td><td><%=PhysicsMarks %></td><%=rem4%><td></td></tr>
+            <tr><td>105</td><td>Chemistry</td><td>33</td><td>100</td><td><%=ChemistryMarks %></td><td><%=rem5%></td></tr>
+        </table>    
+
+        <table border='1' width='60%'><caption><b>Student Status</b></caption>
+            <tr><th>Total</th><th>Percent</th><th>Status</th></tr>
+            <tr><td><%=total %></td><td><%=per %></td><td><%= s%> </td></tr></table>
+
+<%}%>
+
+
+
+</body>
+</html>
+
+
